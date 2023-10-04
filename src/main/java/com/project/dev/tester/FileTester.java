@@ -31,11 +31,11 @@ import java.util.Map;
 public class FileTester {
 
     /**
-     * TODO: Definición de {@code addUrlsToList}.
+     * Agrega un {@code String} a un {@code List} si el {@code String} es el url de una página.
      *
-     * @param line
-     * @param list
-     * @return
+     * @param line es el {@code String} que se va a validar.
+     * @param list es la lista donde se almacenará el {@code String}.
+     * @return {@code true}.
      */
     private static boolean addUrlsToList(String line, List<String> list) {
         if (line.matches("(http://|https://).*?"))
@@ -44,10 +44,11 @@ public class FileTester {
     }
 
     /**
-     * TODO: Definición de {@code processFlags}.
+     * Procesa las {@code Flag} pasadas por consola y ejecuta la función de prueba.
      *
-     * @param flags
-     * @return
+     * @param flags son las {@code Flag} pasadas por consola.
+     * @return {@code false} si ocurrió algún error durante la ejecución, caso contrario
+     *         {@code true}.
      */
     public static boolean processFlags(Flag[] flags) {
         boolean result;
