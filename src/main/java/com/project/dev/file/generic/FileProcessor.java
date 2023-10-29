@@ -27,7 +27,7 @@ import java.util.function.Function;
 import lombok.NonNull;
 
 /**
- * TODO: Definición de {@code FileProcessor}.
+ * TODO: Description of {@code FileProcessor}.
  *
  * @author Dyson Parra
  * @since 11

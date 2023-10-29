@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO: Definición de {@code FileTester}.
+ * TODO: Description of {@code FileTester}.
  *
  * @author Dyson Parra
  * @since 11
