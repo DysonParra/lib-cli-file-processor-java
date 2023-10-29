@@ -26,7 +26,7 @@ import java.util.Map;
  * TODO: Definición de {@code FileTester}.
  *
  * @author Dyson Parra
- * @since 1.8
+ * @since 11
  */
 public class FileTester {
 
