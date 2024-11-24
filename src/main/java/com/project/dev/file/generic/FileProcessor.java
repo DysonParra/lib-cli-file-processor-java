@@ -84,8 +84,8 @@ public class FileProcessor {
      * @param path           es la ruta del archivo.
      * @param lineFunction   es la {@code Function} que se ejecutará para cada línea del archivo si
      *                       {@code lineBiFunction} es {@code null}.
-     * @param lineBiFunction es la {@code BiFunction} que se ejecutará para cada línea del archivo si
-     *                       {@code lineFunction} es {@code null}.
+     * @param lineBiFunction es la {@code BiFunction} que se ejecutará para cada línea del archivo
+     *                       si {@code lineFunction} es {@code null}.
      * @param sharedObject   es una variable compartida que se pasará como parémetro a
      *                       {@code lineBiFunction} cada vez que se lea una línea del archivo (si
      *                       {@code lineBiFunction} no es igual a {@code null}).
@@ -145,32 +145,6 @@ public class FileProcessor {
             @NonNull BiFunction<String, T, Boolean> lineBiFunction,
             @NonNull T sharedObject) {
         return processFile(path, null, lineBiFunction, sharedObject);
-    }
-
-    /**
-     * Muestra el contenido de un {@code String} y es un ejemplo de {@code Function} que puede ser
-     * usada como parámetro de {@code forEachLine} para mostar cada línea del archivo.
-     *
-     * @param line es un {@code String} que contiene una línea de un archivo.
-     * @return {@code true}.
-     */
-    public static boolean printLine(@NonNull String line) {
-        System.out.println(line);
-        return true;
-    }
-
-    /**
-     * Almacena un {@code String} en un {@code List} y es un ejemplo de {@code BiFunction} que puede
-     * ser usada como parámetro de {@code forEachLine} para almacenar cada línea del archivo en una
-     * lista.
-     *
-     * @param line es un {@code String} que contiene una línea de un archivo.
-     * @param list es la lista donde se guardará el {@code line}.
-     * @return {@code true}.
-     */
-    public static boolean addLineToList(@NonNull String line, @NonNull List<String> list) {
-        list.add(line);
-        return true;
     }
 
     /**

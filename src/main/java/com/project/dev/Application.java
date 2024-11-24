@@ -14,9 +14,9 @@
  */
 package com.project.dev;
 
-import com.project.dev.flag.processor.Flag;
-import com.project.dev.flag.processor.FlagProcessor;
-import com.project.dev.tester.FileTester;
+import com.project.dev.tester.AppTester;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * TODO: Description of {@code Application}.
@@ -26,44 +26,17 @@ import com.project.dev.tester.FileTester;
  */
 public class Application {
 
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     /**
      * Entrada principal del sistema.
      *
      * @param args argumentos de la linea de comandos.
      */
     public static void main(String[] args) {
-        System.out.println("\n...START...");
-
-        String requiredFlags[][] = {
-            {"-urlsFilePath"},
-            {"-outputPath"}
-        };
-
-        String optionalFlags[][] = {
-        };
-
-        String defaultArgs[] = {
-            "-urlsFilePath",
-            "res\\urls.xml",
-            "-outputPath",
-            "res\\output",
-        };
-
-        // for (String arg : args)
-        //     System.out.println(arg);
-        Flag[] flags;
-        flags = FlagProcessor.convertArgsToFlags(args, defaultArgs, requiredFlags, optionalFlags, false);
-        if (flags == null) {
-            System.out.println("...ERROR IN FLAGS...");
-            return;
-        }
-
-        FlagProcessor.printFlagsArray(flags, true);
-
-        boolean result;
-        result = FileTester.processFlags(flags);
-        System.out.println("last result = " + result);
-        System.out.println("...END...");
+        System.out.printf("\nStart date: %s\n\n", DATE_FORMAT.format(new Date()));
+        System.out.printf("\nResult: %s\n", AppTester.startTesting(args));
+        System.out.printf("\nEnd date:   %s\n", DATE_FORMAT.format(new Date()));
     }
 
 }

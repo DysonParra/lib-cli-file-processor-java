@@ -1,5 +1,5 @@
 /*
- * @fileoverview    {FileTester}
+ * @fileoverview    {ProcessorTester}
  *
  * @version         2.0
  *
@@ -14,6 +14,7 @@
  */
 package com.project.dev.tester;
 
+import com.project.dev.file.generic.FileFunction;
 import com.project.dev.file.generic.FileProcessor;
 import com.project.dev.flag.processor.Flag;
 import com.project.dev.flag.processor.FlagMap;
@@ -23,25 +24,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO: Description of {@code FileTester}.
+ * TODO: Description of {@code ProcessorTester}.
  *
  * @author Dyson Parra
  * @since 11
  */
-public class FileTester {
-
-    /**
-     * Agrega un {@code String} a un {@code List} si el {@code String} es el url de una página.
-     *
-     * @param line es el {@code String} que se va a validar.
-     * @param list es la lista donde se almacenará el {@code String}.
-     * @return {@code true}.
-     */
-    private static boolean addUrlsToList(String line, List<String> list) {
-        if (line.matches("(http://|https://).*?"))
-            list.add(line);
-        return true;
-    }
+public class ProcessorTester {
 
     /**
      * Procesa las {@code Flag} pasadas por consola y ejecuta la función de prueba.
@@ -65,12 +53,12 @@ public class FileTester {
             result = false;
         } else {
             List<String> urls = new ArrayList<>();
-            result = FileProcessor.forEachLine(urlsFilePath, FileTester::addUrlsToList, urls);
+            result = FileProcessor.forEachLine(urlsFilePath, FileFunction::addUrlToList, urls);
 
             System.out.println("Urls:");
             urls.forEach(url -> System.out.println(url));
-            System.out.println("");
         }
+
         return result;
     }
 
