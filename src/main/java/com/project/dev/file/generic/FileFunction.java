@@ -21,7 +21,7 @@ import lombok.NonNull;
  * TODO: Description of {@code FileFunction}.
  *
  * @author Dyson Parra
- * @since 11
+ * @since Java 17 (LTS), Gradle 7.3
  */
 public class FileFunction {
 
