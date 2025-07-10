@@ -1,5 +1,5 @@
 /*
- * @fileoverview    {ProcessorTester}
+ * @overview        {ProcessorTester}
  *
  * @version         2.0
  *
